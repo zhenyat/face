@@ -19,8 +19,6 @@ module Face
   class Error < StandardError; end
 
   class CliTest
-    AppRoot = `pwd`.chomp
-
     ##############################################################
     # First test:
     #   % irb
@@ -34,8 +32,9 @@ module Face
 
   # For test with Rails App
   class Demo
+    AppRoot = `pwd`.chomp
     def self.get_message
-      "Demo message: Face v. #{Face::VERSION}"
+      "#{AppRoot}: message from Face v. #{Face::VERSION}"
     end
   end
 
